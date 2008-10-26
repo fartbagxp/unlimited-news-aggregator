@@ -1,6 +1,7 @@
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.List;
+import java.io.*;
+import java.net.*;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Button;
@@ -102,10 +103,31 @@ public class RSSReader
         
         finally{}
     }
+    
+    public static String getArticle(String urlToRead) {
+        URL url; // The URL to read
+        HttpURLConnection conn; // The actual connection to the web page
+        BufferedReader rd; // Used to read results from the web page
+        String line; // An individual line of the web page HTML
+        String result = ""; // A long string containing all the HTML
+        try {
+           url = new URL(urlToRead);
+           conn = (HttpURLConnection) url.openConnection();
+           conn.setRequestMethod("GET");
+           rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+           while ((line = rd.readLine()) != null) {
+              result += line;
+           }
+           rd.close();
+        } catch (Exception e) {
+           e.printStackTrace();
+        }
+        return result;
+     }
    
     // make beautiful menu for user to use, lalalala!
-    public static void MenuMaking(Display window, Shell shell){
-        shell.setSize(500, 500);
+    public static void MenuMaking(Display window, final Shell shell){
+        shell.setSize(800, 600);
         shell.setText("A Shell Menu Example");
 
         Menu menu = new Menu(shell, SWT.BAR);
@@ -142,8 +164,11 @@ public class RSSReader
 
         final Button getheadlines = new Button(shell, SWT.PUSH);
         getheadlines.setBounds(5, 5, 80, 50);
-
         getheadlines.setText("Get Headlines");
+        
+        final Button getArticles = new Button(shell, SWT.PUSH);
+        getArticles.setBounds(5, 55, 80, 50);
+        getArticles.setText("Get Articles");
         shell.open();
    
         final Table table = new Table(shell, SWT.CHECK | SWT.BORDER | SWT.V_SCROLL
@@ -164,7 +189,7 @@ public class RSSReader
         }
 
            //Bound of table
-        table.setBounds(60, 60, 1000, 1000);
+        table.setBounds(85, 5, 700, 400);
                      
          // simply provide a link to generate xml feeds to client!
 
@@ -173,8 +198,24 @@ public class RSSReader
         		 iterateRSSFeed("http://rss.cnn.com/rss/cnn_topstories.rss", table);
              }
          };
+         
+         Listener articleListener = new Listener(){
+        	 public void handleEvent(Event event){
+        		 String str;
+        		 /*for(int index = 0; index < table.getItemCount(); index++){
+        			 if (){
+        				 str = String.valueOf(index);
+        				 System.out.println(str);
+        			 }
+        			 
+        		 }*/
+        		 str = getArticle("http://www.cnn.com/2008/POLITICS/10/26/campaign.wrap/index.html?eref=rss_topstories");
+        		 System.out.println(str);
+        	 }
+         };
    
          getheadlines.addListener(SWT.Selection, headlinelistener);
+         getArticles.addListener(SWT.Selection, articleListener);
          MenuMaking(window, shell);
     
          // close everything!
