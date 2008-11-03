@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Boris/workspace/org.eclipse.swt/swt.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Boris/Desktop/New Folder/plugins/rome-1.0RC1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Boris/Desktop/New Folder/plugins/jdom.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Boris/Desktop/New Folder/plugins/iText-2.1.3.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
