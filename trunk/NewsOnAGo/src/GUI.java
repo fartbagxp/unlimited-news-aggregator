@@ -53,12 +53,14 @@ public class GUI
         //create a "Get Headlines" button to get headline!
         final Button getheadlines = new Button(shell, SWT.PUSH);
         getheadlines.setBounds(5, 5, 80, 50);
-        
         getheadlines.setText("Get Headlines");
-        shell.open();
+        
+        final Button getArticles = new Button(shell, SWT.PUSH);
+        getArticles.setBounds(5, 55, 80, 50);
+        getArticles.setText("Get Articles");        shell.open();
         
         //create a window
-        shell.setSize(500, 500);
+        shell.setSize(1000, 900);
         shell.setText("A Shell Menu Example");
 
         Menu menu = new Menu(shell, SWT.BAR);
@@ -73,7 +75,9 @@ public class GUI
         MenuItem exitItem = new MenuItem(filemenu, SWT.PUSH);
         exitItem.setText("Exit");
   
-        final Table table = new Table(shell, SWT.CHECK | SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL);
+        // create columns of news attributes
+        final Table table = new Table(shell, SWT.CHECK | SWT.BORDER | SWT.V_SCROLL
+                | SWT.H_SCROLL);
         table.setHeaderVisible(true);
         String[] titles = { "Title", "Author", "Date", "Source", "Link" };
 
@@ -82,16 +86,16 @@ public class GUI
               TableColumn column = new TableColumn(table, SWT.NULL);
               column.setText(titles[loopIndex]);
         }
-       
+        
         for (int loopIndex = 0; loopIndex < titles.length; loopIndex++) {
             table.getColumn(loopIndex).pack();
         }
 
         // Bound of table
-        table.setBounds(60, 60, 1000, 1000);
+        table.setBounds(85, 5, 900, 600);
                     
         /* simply provide a link to generate xml feeds to client
-         * if user attempts to get headlines
+         * if user attempts to get headlinesW
          * generate a feed back to the client to download headlines
          */
         getheadlines.addListener(SWT.Selection, new Listener(){
@@ -99,6 +103,26 @@ public class GUI
                 getHeadlines.iterateRSSFeed("http://rss.cnn.com/rss/cnn_topstories.rss", table);
             }
         });
+        
+        // for every headline check box that is checked, get the article HTML
+        Listener articleListener = new Listener(){
+        	public void handleEvent(Event event){
+        		String articleHTML = "";
+       		 	TableItem[] headlines = table.getItems();
+       		 	boolean isChecked = false;
+       		  	for (int i = 0; i < headlines.length; i++) {
+       		  		isChecked = headlines[i].getChecked();
+       		  		if(isChecked){
+       		  			articleHTML = Article.getArticle(headlines[i].getText(4));
+       		  			System.out.println(articleHTML);
+       		  		}
+       		  	}		 
+       		  	
+       		 }
+       	 };
+  
+ 
+        getArticles.addListener(SWT.Selection, articleListener);
         
         // close the shell if the menu item "Exit" is pushed
         exitItem.addListener(SWT.Selection, new Listener(){
@@ -108,9 +132,9 @@ public class GUI
         }); 
 
         shell.setMenuBar(menu);
-
         shell.open();
-
+        
+        // close the shell
         while (!shell.isDisposed()) {
           if (!display.readAndDispatch())
             display.sleep();
