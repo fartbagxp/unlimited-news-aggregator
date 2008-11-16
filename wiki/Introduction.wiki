@@ -69,45 +69,13 @@ Others:
      
 Total budget required: $22,500 + $200 + $6000 + $1,200 = $29,900
 
+* Project Status Report * As of 9/25/08
 
-
-* 4. Use Cases *
-
-Use Case: GetLatestArticles
-Identifier:	UC1
-Description:	The GetLatestArticles use case models a User downloading the latest headlines.
-Actors:	User
-Preconditions:	1.	The system is running and is connected to the internet.
-Flow of events:	1.	The User selects the Get Current Headlines menu option.
-2.	The system displays the latest headlines.
-3.	The User selects the headlines of articles he wishes to view.
-4.	The system displays the articles the User selected.
-Postconditions:	1. The User obtains the current articles he desires.
-
-Use Case: SearchforArticles
-Identifier:	UC2
-Description:	The SearchforArticles use case models a User searching for and obtaining a particular article.
-Actors:	User
-Preconditions:	1.	The system is running.
-Flow of events:	1.	The User inputs query to the system.
-2.	The system displays the resulting headlines from the query.
-3.	The User selects the headlines of articles he wishes to view.
-4.	The system displays the articles the User selected.
-Postconditions:	       1.   The User obtains the articles he desires.
-Extension:	       1a. The system is not connected to the internet
-               1. The system displays an error message to the user. 
-
-UC3 Save Articles
-UC4 Create Albums
-UC5 Store Article
-UC6 Comment Article
-
-Project Status Report
 We are currently on schedule.  For the time being, we have finalized the functions our application will possess.  These functions are searching, collecting, storing, creating albums, and saving to albums.  Our product will also include information about RSS feeds, since it is a critical part of our project.  Our group is currently working on the downloading headlines function for our first iteration.  Our first iteration will end next Thursday.  
 
 We plan to do our project implementation earlier for fear of encountering difficulties in the final coding phase.  This decision allows us to not only have sufficient time to resolve unexpected problems but also achieve the goal of our project in time.
 
-Contribution Summary
+* Contribution Summary * As of 9/25/08
 After the discussion about our project inception, the report writing each member is responsible for is listed below:
 •	Hsin-Yen Liu (Tommy): Project Status Report, Contribution Summary, Layout of Inception.
 •	Yu Ning (Boris): Vision Statement, Glossary, Project Budget.
