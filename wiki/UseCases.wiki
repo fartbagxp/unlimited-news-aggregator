@@ -1,5 +1,4 @@
 #labels Usecase
-
 = Introduction =
 
 The current news aggregator use cases
@@ -8,7 +7,7 @@ The current news aggregator use cases
 
 * Use Cases *
 
-Use Case: GetLatestArticles
+*Use Case 1: GetLatestArticles*
 
 Identifier:	UC1
 
@@ -28,50 +27,91 @@ Flow of events:	1.	The User selects the Get Current Headlines menu option.
 
 Postconditions:	1. The User obtains the current articles he desires.
 
-Use Case: SearchforArticles
+-----------------------------------------------------------------------------------------
+
+Use Case 2: SearchforArticles
+
 Identifier:	UC2
+
 Description:	The SearchforArticles use case models a User searching for and obtaining a particular article.
+
 Actors:	User
+
 Preconditions:	1.	The system is running.
+
 Flow of events:	1.	The User inputs query to the system.
+
 2.	The system displays the resulting headlines from the query.
+
 3.	The User selects the headlines of articles he wishes to view.
+
 4.	The system displays the articles the User selected.
+
 Postconditions:	       1.   The User obtains the articles he desires.
+
 Extension:	       1a. The system is not connected to the internet
+
                1. The system displays an error message to the user. 
 
+-----------------------------------------------------------------------------------------
+
 Use Case: SaveArticle
+
 Identifier:	UC3
+
 Description:	The SaveArticle use case models a User saving articles into a file.
+
 Actors:	User
+
 Preconditions:	1.	The User is viewing an article.
+
 Flow of events:	1.	The use case starts when a User selects the Save Articles option.
-2.	The system requests the user to input a desired location, filename, and file association.
+
+2.	The system requests the user to input a desired location, filename, and file 
+association.
+
 3.	The User browses to the desired location and inputs a filename and selects a file association.
+
 Postconditions:	   1.  The system creates a file containing the articles according to the user specifications.
 
-Use Case: CreateAlbum
+-----------------------------------------------------------------------------------------
+
+Use Case 4: CreateAlbum
+
 Identifier:	UC4
+
 Description:	The CreateAlbum use case models a User creating an album for articles.
+
 Actors:	User
+
 Preconditions:	1.	The system is running.
-Flow of events:	1.	The use case starts when a User selects the Create Album menu option.
+
+Flow of events:	1.	The use case starts when a User selects the Create Album menu 
+option.
+
 2.	The system queries the user to input an album name.
+
 3.	The User inputs an album name.
+
 Postconditions:	       1.   The system creates an album.
 
-Use Case: StoreArticle
+Use Case 5: StoreArticle
+
 Identifier:	UC5
+
 Description:	The StoreArticle use case models a User storing an article in an album.
+
 Actors:	User
+
 Preconditions:	1.	The User is viewing an article
+
 Flow of events:	1.	The use case starts when the User selects article he wishes to save.
+
 2.	The system displays the available albums.
+
 3.	The User selects the desired album.
+
 Postconditions:	       1.   The system stores the articles in the album.
-
-
 
 
 
