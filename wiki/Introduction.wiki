@@ -1,11 +1,11 @@
-*bold* = Introduction =
+* = Introduction = *
    
 Group: Asian Unlimited 
 Team Members: Yu Ning (Boris), Max Muthalathu, and Hsin-Yen Liu (Tommy).
 Software Project - NewsOnAGo, a news aggregator 
 
 = Details =
-*bold* 1. Vision Statement
+* 1. Vision Statement *
 Elevator Summary of the Project
 The Asian Unlimited is committed to building a news aggregator, a news article download application.  Our team consists of three members, Yu Ning (Boris), Max Muthalathu, and Hsin-Yen Liu (Tommy).  We will be building an application capable of downloading articles from popular online news websites such as cnn.com, newyorktimes.com, and foxnews.com. Upon downloading the article, the users will be able to search, save articles, and create albums. It will also be possible for the user to comment on the news article in the album for later usage.  The application will have an ability to make the article into a pdf or ebook format.  This will allow the user to get an article online and read it offline.  This will be our major requirement.   Our target audience will be people who are stuck in airports, train stations, and other inconvenient places.  
 
@@ -31,7 +31,7 @@ Our first risk is unfamiliarity with RSS feeds. Without this our software will n
 We also have unfamiliarity with ebook and pdf formats. This is our selling point. Without this our product would not be unique and users would not have a preference toward our product.
 We have no experience in creating GUI in C++.We need a GUI to allow interaction with the user. Having no experience is a risk since we are not sure if we can learn how to make one in C++. Learning another language to implement a GUI would impose another risk of having to learn that language and understand how to complete the rest of the project in that language.
 
-*bold* 2. Glossary
+* 2. Glossary *
 Aggregator	An application that downloads headlines and articles to the computer.
 Headline	A heading at the top of a news article indicating the nature of the article.
 RSS	A format used to update Web feeds.  It stands for really simple syndication.
@@ -39,7 +39,7 @@ Web feed	Data format that provide the news headlines/content directly to the agg
 Categories	Classification of articles including tags, title, date, etc…
 Album	A type of scrape-book in the aggregator to put news article in.
 
-*bold* 3. Project Budget
+* 3. Project Budget *
 Staffing Cost:
 a.	Members: 3
 b.	Hourly Wage: $50
@@ -54,7 +54,7 @@ Total budget required: $22,500 + $200 + $6000 + $1,200 = $29,900
 
 
 
-*bold* 4. Use Cases
+* 4. Use Cases *
 
 Use Case: GetLatestArticles
 Identifier:	UC1
@@ -96,7 +96,5 @@ After the discussion about our project inception, the report writing each member
 •	Yu Ning (Boris): Vision Statement, Glossary, Project Budget.
 •	Max Muthalathu: Use Cases, Project Schedule, Final Revision.
 All content is reviewed by every member.
-
-
 
 
