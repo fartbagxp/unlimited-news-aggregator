@@ -1,4 +1,4 @@
-
+#labels Usecase
 
 = Introduction =
 
@@ -9,14 +9,23 @@ The current news aggregator use cases
 * Use Cases *
 
 Use Case: GetLatestArticles
+
 Identifier:	UC1
+
 Description:	The GetLatestArticles use case models a User downloading the latest headlines.
+
 Actors:	User
+
 Preconditions:	1.	The system is running and is connected to the internet.
+
 Flow of events:	1.	The User selects the Get Current Headlines menu option.
+
 2.	The system displays the latest headlines.
+
 3.	The User selects the headlines of articles he wishes to view.
+
 4.	The system displays the articles the User selected.
+
 Postconditions:	1. The User obtains the current articles he desires.
 
 Use Case: SearchforArticles
