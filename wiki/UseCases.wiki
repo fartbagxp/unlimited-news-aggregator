@@ -5,7 +5,7 @@ The current news aggregator use cases
 
 = Details =
 
-* Use Cases *
+==* Use Cases *==
 
 *Use Case 1: GetLatestArticles*
 
@@ -29,7 +29,7 @@ Postconditions:	1. The User obtains the current articles he desires.
 
 -----------------------------------------------------------------------------------------
 
-Use Case 2: SearchforArticles
+* Use Case 2: SearchforArticles *
 
 Identifier:	UC2
 
@@ -55,7 +55,7 @@ Extension:	       1a. The system is not connected to the internet
 
 -----------------------------------------------------------------------------------------
 
-Use Case: SaveArticle
+* Use Case: SaveArticle *
 
 Identifier:	UC3
 
@@ -76,7 +76,7 @@ Postconditions:	   1.  The system creates a file containing the articles accordi
 
 -----------------------------------------------------------------------------------------
 
-Use Case 4: CreateAlbum
+* Use Case 4: CreateAlbum *
 
 Identifier:	UC4
 
@@ -92,10 +92,11 @@ option.
 2.	The system queries the user to input an album name.
 
 3.	The User inputs an album name.
+-----------------------------------------------------------------------------------------
 
 Postconditions:	       1.   The system creates an album.
 
-Use Case 5: StoreArticle
+* Use Case 5: StoreArticle *
 
 Identifier:	UC5
 
@@ -112,8 +113,6 @@ Flow of events:	1.	The use case starts when the User selects article he wishes t
 3.	The User selects the desired album.
 
 Postconditions:	       1.   The system stores the articles in the album.
-
-
 
 
 
