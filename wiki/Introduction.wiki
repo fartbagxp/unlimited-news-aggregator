@@ -75,7 +75,9 @@ We are currently on schedule.  For the time being, we have finalized the functio
 
 We plan to do our project implementation earlier for fear of encountering difficulties in the final coding phase.  This decision allows us to not only have sufficient time to resolve unexpected problems but also achieve the goal of our project in time.
 
-* Contribution Summary * As of 9/25/08
+* Contribution Summary * 
+
+As of 9/25/08
 After the discussion about our project inception, the report writing each member is responsible for is listed below:
 •	Hsin-Yen Liu (Tommy): Project Status Report, Contribution Summary, Layout of Inception.
 •	Yu Ning (Boris): Vision Statement, Glossary, Project Budget.
