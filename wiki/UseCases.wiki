@@ -92,9 +92,9 @@ option.
 2.	The system queries the user to input an album name.
 
 3.	The User inputs an album name.
------------------------------------------------------------------------------------------
 
 Postconditions:	       1.   The system creates an album.
+-----------------------------------------------------------------------------------------
 
 * Use Case 5: StoreArticle *
 
@@ -113,8 +113,6 @@ Flow of events:	1.	The use case starts when the User selects article he wishes t
 3.	The User selects the desired album.
 
 Postconditions:	       1.   The system stores the articles in the album.
-
-
 
 
 
