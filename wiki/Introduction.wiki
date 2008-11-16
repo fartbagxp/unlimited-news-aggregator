@@ -48,15 +48,16 @@ Categories	Classification of articles including tags, title, date, etc…
 Album	A type of scrape-book in the aggregator to put news article in.
 
 * 3. Project Budget *
+
 Staffing Cost:
-a.	Members: 3
-b.	Hourly Wage: $50
-c.	Work span:  10 hours per week, 15 weeks
+*	Members: 3
+*	Hourly Wage: $50
+*	Work span:  10 hours per week, 15 weeks
 Total wages: 3 * 50 * 10 * 15 = $22,500
 Others: 
-d.	Software: UML design program – SmartDraw - $200
-e.	Hardware:  New computers for each individual worker - $6,000
-f.	Misc: Coffee, energy drinks, electric bills, internet bills - $1,200
+*	Software: UML design program – SmartDraw - $200
+*	Hardware:  New computers for each individual worker - $6,000
+*	Misc: Coffee, energy drinks, electric bills, internet bills - $1,200
      
 Total budget required: $22,500 + $200 + $6000 + $1,200 = $29,900
 
