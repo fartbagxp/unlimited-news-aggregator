@@ -115,9 +115,7 @@ Flow of events:	1.	The use case starts when the User selects article he wishes t
 Postconditions:	       1.   The system stores the articles in the album.
 
 -----------------------------------------------------------------------------------------
-* Use Case 6: CommeneArticle *
-
-
+* Use Case 6: CommentArticle *
 
 
 
