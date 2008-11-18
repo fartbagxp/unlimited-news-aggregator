@@ -78,8 +78,12 @@ We plan to do our project implementation earlier for fear of encountering diffic
 * Contribution Summary * 
 
 As of 9/25/08
+
 After the discussion about our project inception, the report writing each member is responsible for is listed below:
 •	Hsin-Yen Liu (Tommy): Project Status Report, Contribution Summary, Layout of Inception.
+
 •	Yu Ning (Boris): Vision Statement, Glossary, Project Budget.
+
 •	Max Muthalathu: Use Cases, Project Schedule, Final Revision.
+
 All content is reviewed by every member.
