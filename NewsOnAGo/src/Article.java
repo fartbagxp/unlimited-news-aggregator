@@ -66,10 +66,11 @@ public class Article implements Serializable{
 	}
 	
 	// display all the information of the article
+	// Code test: tracing an article
 	public void displayArticle(){
-		System.out.println("Article Headline: " + title);
-		System.out.println("Article HTML String: " + html);
-		System.out.println("Article Comment: " + commentText);
+//		System.out.println("Article Headline: " + title);
+//		System.out.println("Article HTML String: " + html);
+//		System.out.println("Article Comment: " + commentText);
 	}
 	
 }

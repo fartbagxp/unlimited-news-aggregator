@@ -70,10 +70,16 @@ public class ArticleView{
 		// create a label to show the article title that user selects in the article table
 		articleTitleLabel = new Label(group, SWT.NONE);
 		articleTitleLabel.setText("(Select from the table below)");
-		articleTitleLabel.setBounds(100, 15, 500, 20);
+		articleTitleLabel.setBounds(100, 15, 400, 20);
 		// set the color of article title to be blue
 		Color blue = new Color(null, 0 , 0 , 255);
         articleTitleLabel.setForeground(blue); 
+        		
+		// create a "save as pdf" button to save an article as a PDF file  
+		final Button saveAsPdfButton = new Button(group, SWT.PUSH);
+		saveAsPdfButton.setText("save article as pdf");
+		saveAsPdfButton.setBounds(600, 12, 60, 20);
+		saveAsPdfButton.pack();
 	    
 		// create a label
 		final Label label2 = new Label(group, SWT.NONE);
@@ -107,7 +113,7 @@ public class ArticleView{
 		// create a table to display all articles
 		table = new Table(tabComposite, SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL);
 	    table.setHeaderVisible(true);
-		table.setBounds(0, 68, 200, 540);
+		table.setBounds(0, 69, 200, 541);
 
 		// create columns of the table header ("Title") for user to click on
 		for (int loopIndex = 0; loopIndex < titles.length; loopIndex++) {
@@ -121,11 +127,14 @@ public class ArticleView{
 		// create a browser
 		try {
 			browser = new Browser(tabComposite, SWT.MOZILLA | SWT.BORDER);
-			browser.setBounds(205,68,760,540);
+			browser.setBounds(210,69,755,541);
 		} 
+		
 		catch (SWTError e) {
+			
 			// if any exceptions occur, show the error message in the console
-			System.out.println("Could not instantiate Browser: " + e.getMessage());
+			// Code test: tracing the browser
+//			System.out.println("Could not instantiate Browser: " + e.getMessage());
 		}
 			
 		// if "add to album" button is pressed
@@ -146,10 +155,30 @@ public class ArticleView{
 		};
 			       	 
 		addToAlbumButton.addListener(SWT.Selection, addToAlbumListener);
+		
+		// if "save article as pdf" button is pressed
+		Listener saveAsPdfListener = new Listener(){
+			public void handleEvent(Event event){
+				try{
+					// save the article as PDF file
+					saveAsPdf();
+				}
+				catch(Exception e){
+					// if errors occur, show the error message in the console
+				    e.printStackTrace();
+				}   
+				finally{
+						
+				}
+			}
+		};
+			       	 
+		saveAsPdfButton.addListener(SWT.Selection, saveAsPdfListener);
 		        
 		// if one item of table is clicked by user
 		table.addListener (SWT.Selection, new Listener () {
 			public void handleEvent (Event event) {
+				
 				// display the html page of the article
 				String title;
 				title = ((TableItem) event.item).getText(0);
@@ -182,7 +211,7 @@ public class ArticleView{
 		String articleHTML = "";
 			
 		// check for duplicates
-		for(int index=0; index<articles.size(); index++){
+		for(int index=0; index < articles.size(); index++){
 			duplicateArticle = checkArticles(articles.elementAt(index)[0]);
 		        
 			// if an article doesn't exist yet in the current table
@@ -215,7 +244,7 @@ public class ArticleView{
 	// check whether a specific article already exist in the table
 	public static boolean checkArticles(String article){
 		
-		for (int articleIndex = 0; articleIndex<table.getItemCount(); articleIndex++){
+		for (int articleIndex = 0; articleIndex < table.getItemCount(); articleIndex++){
 				
 			// if an article already exists, we don't add it into the table
 			if (article.equals(table.getItem(articleIndex).getText(0))){
@@ -251,7 +280,7 @@ public class ArticleView{
 			Color red = new Color(null, 255 , 0 , 0);
 			errorMessage.setForeground(red);
 		}
-		else{
+		else {
 			// if album name is not selected (identified)
 			if(albumCombo.getText().equals("")){
 				
@@ -261,7 +290,7 @@ public class ArticleView{
 				Color red = new Color(null, 255 , 0 , 0);
 				errorMessage.setForeground(red);
 			}
-			else{
+			else {
 				// if both article name and album name are assigned by the user 
 				// store the article into album (which is stored in Album Repository)
 				int storeInfo;
@@ -282,7 +311,7 @@ public class ArticleView{
 					errorMessage.setForeground(black);
 						
 				}
-					else{
+					else {
 					// if the article already exists in this album and therefore is not stored in the album
 					if(storeInfo == 4){
 						// show error message
@@ -291,7 +320,7 @@ public class ArticleView{
 						Color red = new Color(null, 255 , 0 , 0);
 						errorMessage.setForeground(red);
 					}
-					else{
+					else {
 						// if something else happens
 						// show error message
 						errorMessage.setText("The article is not stored due to some reasons.");
@@ -302,5 +331,14 @@ public class ArticleView{
 				}
 			}				
 		}			
-	}	
+	}
+	
+	public static void saveAsPdf(){
+	    // this part is undone
+		// show error message
+		errorMessage.setText("This function is unworkable now.");
+		errorMessage.pack();							
+		Color red = new Color(null, 255 , 0 , 0);
+		errorMessage.setForeground(red);
+	}
 }

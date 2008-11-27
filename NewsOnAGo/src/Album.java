@@ -23,7 +23,7 @@ public class Album implements Serializable{
 	private String name;
 	
 	// articles held by the created album
-	private Vector<Article> vect;
+	private Vector<Article> articleList;
 	
 	// constructor_1 for serialization
 	public Album(){
@@ -33,12 +33,12 @@ public class Album implements Serializable{
 	// constructor_2
 	public Album(String albumName, Vector<Article> articles){
 		this.name = albumName;
-		this.vect = articles;
+		this.articleList = articles;
 	}
 		
 	// add a specific article into album
 	public void addArticle(Article article){		
-		this.vect.add(article);
+		this.articleList.add(article);
 	}
 	
 	// get the album name
@@ -48,37 +48,42 @@ public class Album implements Serializable{
 	
 	// get all articles stored in the album
 	public Vector<Article> getAllArticles(){
-		return vect;
+		return articleList;
 	}
 	
 	// get a specific article title by index
 	public String getArticleTitle(int index){
-		return vect.get(index).getTitle();
+		return articleList.get(index).getTitle();
 	}
 	
 	// get a specific article html by index
 	public String getArticleHtml(int index){
-		return vect.get(index).getHTML();
+		return articleList.get(index).getHTML();
 	}
 	
 	// get a specific article comment by index
 	public String getArticleComment(int index){
-		return vect.get(index).getComment();
+		return articleList.get(index).getComment();
 	}
 	
 	// get a specific article by index
 	public Article getArticle(int index){
-		return vect.get(index);
+		return articleList.get(index);
 	}
 		
 	// get the number of articles stored in the album
 	public int getNumOfArticles(){
-		return vect.size();
+		return articleList.size();
 	}
 	
 	// set the album name
 	public void setAlbumName(String albumName){
 		this.name = albumName;
+	}
+	
+	// remove an article from an album
+	public void removeArticle(int articleIndex){
+		articleList.remove(articleIndex);
 	}
 	
 }

@@ -7,13 +7,12 @@ import java.util.Vector;
 import com.sun.syndication.feed.synd.SyndContentImpl;
 import com.sun.syndication.feed.synd.SyndEntry;
 import com.sun.syndication.feed.synd.SyndFeed;
-import com.sun.syndication.feed.synd.SyndImageImpl;
 import com.sun.syndication.io.SyndFeedInput;
 import com.sun.syndication.io.XmlReader;
 
 /**
- * The RSSFeed class establishes a connection to an RSS feed and returns all the headlines
- * from that RSS feed to the table in the headline tab
+ * The RSSFeed class opens a new connection to the RSS URL link given to it
+ * and updates the table in the headline tab with headlines
  *  
  * @version 2.0 (11/19/2008)
  * @author NewsOnAGo team
@@ -21,34 +20,25 @@ import com.sun.syndication.io.XmlReader;
 
 public class RSSFeed {
 	
-	// hold onto all the headlines needed
 	private static Vector<String[]> headlines = new Vector<String[]>();
 	
-	// hold onto all the RSS feed streams that user has checked off
 	public static Vector<String[]> iterateRSSFeed(String src, String rssFeedUrl){
 		
 		try{
 			
-	    	// establish a connection to the rss feed
+	    	// establish a connection to the RSS feed
 	        URLConnection feedUrl = new URL(rssFeedUrl).openConnection();
 
 	        // create Feed Object
 	        SyndFeedInput input = new SyndFeedInput();
 	        SyndFeed feed = input.build(new XmlReader(feedUrl));
-
-	        System.out.println("Examining rss feed:"+rssFeedUrl+"\n");
-	        System.out.println("Feed type="+feed.getFeedType());
+	        
+	        // Coding test: tracing statement
+//	        System.out.println("Examining rss feed:"+rssFeedUrl+"\n");
+//	        System.out.println("Feed type="+feed.getFeedType());
 
 	        // iterate through object to get details
-	        List list = feed.getEntries();
-
-	        System.out.println("Feed image="+feed.getImage());
-	        
-	        if (feed.getImage()!=null){
-	        	SyndImageImpl image = (SyndImageImpl)feed.getImage();
-	            String imageInfo = "Image url:"+image.getUrl()+"\n";
-	            System.out.println(imageInfo);
-	        }   
+	        List<?> list = feed.getEntries();
 	            
 	        // display multiple entries from a single aggregation
 	        for (int i=0 ; i < list.size(); i++){
@@ -71,7 +61,6 @@ public class RSSFeed {
 		        
 		        
 		        descriptionString = descriptionString.substring(22, infoEnd); 
-		        System.out.println("DescriptionString = " + descriptionString + "\n\n\n");
 		        
 		        // model.addRow(data);
 		        if (entry.getContents().size()==1){
@@ -79,7 +68,9 @@ public class RSSFeed {
 		            display += "\ncontent value:"+imp.getValue();
 		        }
 		        display += "\n";
-		        System.out.println(display);
+		        
+		        // Coding test: tracing statement
+//		        System.out.println(display);
 		                
 		        /* data holds all the data we need to get headlines and other various attributes
 		         * parameter:	item 0 = title
@@ -99,15 +90,13 @@ public class RSSFeed {
 		         headlines.add(i, stringArray);
 		    }
 	        
-	        // packing 5 columns together
-	        //for (int loopIndex = 0; loopIndex < 5; loopIndex++){
-	        //	headlineTable.getColumn(loopIndex).pack();
-	        //}
 		}    
 	    // if all else fails, blah out an error
 	    catch(Exception e){
 	        e.printStackTrace();
-	        System.out.println("Something wrong in IterateRSSFeed");
+	        
+	        //Coding Test: exception catching
+//	        System.out.println("Something wrong in IterateRSSFeed");
 	    }   
 	    finally{}
 		return headlines;

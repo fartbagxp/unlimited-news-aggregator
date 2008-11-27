@@ -15,31 +15,33 @@ import java.util.Vector;
 public class ArticleRepository{
 	    
 		// vector storing a list of articles
-		private static Vector<Article> vect;
+		private static Vector<Article> articleList;
 		
 		// constructor: automatically read all the disk-stored articles from the directory (disk)
 		@SuppressWarnings("unchecked")
 		public ArticleRepository(String directory){
-            vect = (Vector<Article>)SerializableManager.getDataFromDisk(directory);
-            if (vect == null)vect = new Vector<Article>();
+            articleList = (Vector<Article>)SerializableManager.getDataFromDisk(directory);
+            if (articleList == null)articleList = new Vector<Article>();
 		}
 		
 		// store the article into the article repository
 		public static void addArticle(Article storedArticle) {
-			vect.add(storedArticle);
+			articleList.add(storedArticle);
 		}		
 		
 		// retrieve a specific article from the article repository by index
 		public static Article getArticleByIndex(int articleIndex){
-			return vect.get(articleIndex);
+			return articleList.get(articleIndex);
 		}
 		
 		// get the article html string by its title
 		public static String getHtmlByTitle(String title){
 			String html;
-			for(int index = 0; index < vect.size(); index++){
-				if(title.equals(vect.elementAt(index).getTitle())){
-					html = vect.elementAt(index).getHTML();
+			for(int index = 0; index < articleList.size(); index++){
+				
+				// when headline has been found, get the html for it
+				if(title.equals(articleList.elementAt(index).getTitle())){
+					html = articleList.elementAt(index).getHTML();
 					return html;
 				}
 			}
@@ -48,46 +50,51 @@ public class ArticleRepository{
 		
 		// get the number of articles stored in the article repository
 		public static int getNumOfArticles(){
-			return vect.size();
+			return articleList.size();
 		}
 		
 		// erase the article at location articleIndex in article repository
 		public static void removeArticleByIndex(int articleIndex){
-			vect.removeElementAt(articleIndex);
+			articleList.removeElementAt(articleIndex);
 		}
 		
 		// remove all articles stored in the article repository (clear command)
 		public static void clearArticles(){
-			vect.removeAllElements();
+			articleList.removeAllElements();
 		}
 		
 		// display all the information of all the articles stored in the article repository
 		public static void displayArticleRepository(){
-			for(int index = 0; index < vect.size(); index++){
-				Article article = vect.get(index);
+			for(int index = 0; index < articleList.size(); index++){
+				Article article = articleList.get(index);
 				article.displayArticle();
 			}
 		}
 		
 		// check if the article is already added into the article repository
 		public static boolean checkArticleRepo(Article articleInfo){
+			
 			// iterate through ArticleRepository to see if it already exists
-			for(int articleIndex = 0; articleIndex<vect.size() ;articleIndex++){
+			for(int articleIndex = 0; articleIndex < articleList.size() ;articleIndex++){
+				
 				// access headline text of user checked article
 				String headlineText = articleInfo.getTitle(); 	
                 
-				if (headlineText.equals(vect.elementAt(articleIndex).getTitle())){
-					// if it is found
+				// headline has been found!
+				if (headlineText.equals(articleList.elementAt(articleIndex).getTitle())){
+					
+					// if found
 					return true;
 				}
 			}
-			// if it is not found
+			
+			// if not found
 			return false;
 		}
 			
 		// save all the articles into the directory(disk)
 		public static void writeArticlesIntoDisk(String directory){
-			SerializableManager.saveDataToDisk(vect , directory);
+			SerializableManager.saveDataToDisk(articleList , directory);
 		}
 		
 	}

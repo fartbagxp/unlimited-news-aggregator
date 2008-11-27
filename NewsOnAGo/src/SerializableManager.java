@@ -31,10 +31,8 @@ public class SerializableManager {
 	    	// if the file is not found, return null
 	    	return temp;
 	    } 
-	    
 	    //if the exception other than FileNotFoundException occurs
 	    catch (Exception e) { 
-	    	
 	    	// show error message in the console
 			e.printStackTrace();
 		} 
@@ -53,6 +51,7 @@ public class SerializableManager {
 	    }
 	    //if the exception occurs
 	    catch(Exception e){
+	    	
 	    	// show error message in the console
 	    	e.printStackTrace();
 	    }

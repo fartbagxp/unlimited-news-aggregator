@@ -53,8 +53,9 @@ public class NewsSource implements Serializable{
 	
 	// display all the information of the news source
 	public void displaySource(){
-		System.out.println("News Source Title: " + title);
-		System.out.println("News Source Link: " + link);
+		// Coding test: tracing what a news source is
+//		System.out.println("News Source Title: " + title);
+//		System.out.println("News Source Link: " + link);
 	}
 	
 }

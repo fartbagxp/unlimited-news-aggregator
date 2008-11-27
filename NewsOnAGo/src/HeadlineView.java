@@ -101,7 +101,7 @@ public class HeadlineView {
 	    // create a table for displaying all the headlines
 	    table = new Table(tabComposite, SWT.CHECK | SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL);
         table.setHeaderVisible(true);
-        table.setBounds(3, 58, 960, 550);
+        table.setBounds(0, 58, 965, 552);
 
         // create columns of the table header ("Title", "Date", "Source", "Link", "Description") for user to click on
 	    for (int loopIndex = 0; loopIndex < titles.length; loopIndex++) {
@@ -226,7 +226,7 @@ public class HeadlineView {
 	        if(updatedNum == 0){
 
 	        	// show the message
-	        	errorMessage1.setText("All articles had been received before.");
+	        	errorMessage1.setText("All articles had been received.");
 				errorMessage1.pack();							
 				Color black = new Color(null, 0 , 0 , 0);
 				errorMessage1.setForeground(black);

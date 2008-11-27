@@ -103,6 +103,7 @@ public class SearchArticle {
 			
 			stringIndex = matchString.indexOf(keywordToken, stringIndex);
 		}
+
 		return numOccurance;
 	}
 	
@@ -156,6 +157,9 @@ public class SearchArticle {
 			
 			// headline text currently in the table
 			String tableHeadline = headline.getText(0);
+			
+			//System.out.println("This is inside searchResult " + headlineText);
+			//System.out.println("This is in the table = " + tableHeadline);
 			
 			// if the two headlines equal, we don't have to delete it
 			if (headlineText.equalsIgnoreCase(tableHeadline)){

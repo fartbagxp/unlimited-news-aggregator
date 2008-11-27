@@ -15,25 +15,25 @@ import java.util.Vector;
 public class AlbumRepository{
 	    
 		// vector storing a list of albums
-		private static Vector<Album> vect;
+		private static Vector<Album> albumList;
 		
 		// constructor: automatically read all the disk-stored albums from the directory (disk)
 		@SuppressWarnings("unchecked")
 		public AlbumRepository(String directory){
-            vect = (Vector<Album>)SerializableManager.getDataFromDisk(directory);
-            if (vect == null)vect = new Vector<Album>();
+            albumList = (Vector<Album>)SerializableManager.getDataFromDisk(directory);
+            if (albumList == null)albumList = new Vector<Album>();
 		}
 		
 		// store the album into the album repository
 		public static void addAlbum(Album storedAlbum) {
-			vect.add(storedAlbum);
+			albumList.add(storedAlbum);
 		}
 		
 		// add an album with no articles 
 		public static void addEmptyAlbum(String albumName){
 			Vector<Article> articles = new Vector<Article>();
 			Album emptyAlbum = new Album(albumName, articles);
-			vect.add(emptyAlbum);
+			albumList.add(emptyAlbum);
 		}
 		
 		// add a specific article into a specific album
@@ -47,35 +47,35 @@ public class AlbumRepository{
 		public static int storeArticle(String albumName, Article storedArticle, boolean duplicate){
 			int albumIndex;
 			int articleIndex;
-			for(albumIndex=0; albumIndex<vect.size(); albumIndex++){
-				if(albumName.equals(vect.get(albumIndex).getAlbumName())){
-					for(articleIndex=0; articleIndex<vect.get(albumIndex).getNumOfArticles(); articleIndex++){
-						if(storedArticle.getTitle().equals(vect.get(albumIndex).getArticleTitle(articleIndex))){
+			for(albumIndex=0; albumIndex<albumList.size(); albumIndex++){
+				if(albumName.equals(albumList.get(albumIndex).getAlbumName())){
+					for(articleIndex=0; articleIndex<albumList.get(albumIndex).getNumOfArticles(); articleIndex++){
+						if(storedArticle.getTitle().equals(albumList.get(albumIndex).getArticleTitle(articleIndex))){
 							if(duplicate == true){
-								vect.get(albumIndex).getAllArticles().add(storedArticle);
+								albumList.get(albumIndex).getAllArticles().add(storedArticle);
 							    return 3;
 							} 
 							else return 4;
 						}
 					}
 					// no duplicate article is found in this album
-					if(articleIndex == vect.get(albumIndex).getNumOfArticles()){
-						vect.get(albumIndex).getAllArticles().add(storedArticle);
+					if(articleIndex == albumList.get(albumIndex).getNumOfArticles()){
+						albumList.get(albumIndex).getAllArticles().add(storedArticle);
 						return 2;
 					}	    
 				}
 			}	
-			if(albumIndex == vect.size()) return 1;
+			if(albumIndex == albumList.size()) return 1;
 			else return 0; // in this case albumIndex must be 0
 		}
 		
 		// store the comment with album name and article title provided
 		public static boolean storeComment(String albumName, String articleName, String comment){
-			for(int albumIndex=0; albumIndex<vect.size(); albumIndex++){
-				if(albumName.equals(vect.get(albumIndex).getAlbumName())){
-					for(int articleIndex=0; articleIndex<vect.get(albumIndex).getNumOfArticles(); articleIndex++){
-						if(articleName.equals(vect.get(albumIndex).getArticleTitle(articleIndex))){
-							vect.get(albumIndex).getArticle(articleIndex).setComment(comment);
+			for(int albumIndex=0; albumIndex<albumList.size(); albumIndex++){
+				if(albumName.equals(albumList.get(albumIndex).getAlbumName())){
+					for(int articleIndex=0; articleIndex<albumList.get(albumIndex).getNumOfArticles(); articleIndex++){
+						if(articleName.equals(albumList.get(albumIndex).getArticleTitle(articleIndex))){
+							albumList.get(albumIndex).getArticle(articleIndex).setComment(comment);
 							return true;							
 						}							
 					}
@@ -86,19 +86,19 @@ public class AlbumRepository{
 		
 		// get a specific album from the album repository by index
 		public static Album getAlbum(int albumIndex){
-			return vect.get(albumIndex);
+			return albumList.get(albumIndex);
 		}
 		
 		// get a specific album name by index
 		public static String getAlbumName(int albumIndex){
-			return vect.get(albumIndex).getAlbumName();
+			return albumList.get(albumIndex).getAlbumName();
 		}
 		
 		// get the article html by its title (use the first match)
 		public static String getHtmlByTitle(String title){
-			for(int albumIndex=0; albumIndex<vect.size(); albumIndex++){
-				for(int articleIndex=0; articleIndex<vect.get(albumIndex).getNumOfArticles(); articleIndex++){
-					if(title.equals(vect.get(albumIndex).getArticleTitle(articleIndex))) return vect.get(albumIndex).getArticleHtml(articleIndex);
+			for(int albumIndex=0; albumIndex<albumList.size(); albumIndex++){
+				for(int articleIndex=0; articleIndex<albumList.get(albumIndex).getNumOfArticles(); articleIndex++){
+					if(title.equals(albumList.get(albumIndex).getArticleTitle(articleIndex))) return albumList.get(albumIndex).getArticleHtml(articleIndex);
 				}
 			}
 			return "";
@@ -106,11 +106,11 @@ public class AlbumRepository{
 				
 		// get the article comments by its title and the name of album where it is stored 
 		public static String getCommentByTitle(String title, String albumName){
-			for(int albumIndex=0; albumIndex<vect.size(); albumIndex++){
-				if(albumName.equals(vect.get(albumIndex).getAlbumName())){
-					for(int articleIndex=0; articleIndex<vect.get(albumIndex).getNumOfArticles(); articleIndex++){
-						if(title.equals(vect.get(albumIndex).getArticleTitle(articleIndex))) 
-							return vect.get(albumIndex).getArticleComment(articleIndex);
+			for(int albumIndex=0; albumIndex<albumList.size(); albumIndex++){
+				if(albumName.equals(albumList.get(albumIndex).getAlbumName())){
+					for(int articleIndex=0; articleIndex<albumList.get(albumIndex).getNumOfArticles(); articleIndex++){
+						if(title.equals(albumList.get(albumIndex).getArticleTitle(articleIndex))) 
+							return albumList.get(albumIndex).getArticleComment(articleIndex);
 					}
 				}
 			}
@@ -120,22 +120,37 @@ public class AlbumRepository{
 		// get total list of album names in album repository 
 		public static Vector<String> getAlbumNames(){
 			Vector<String> albumNames = new Vector<String>();
-			for(int index=0; index<vect.size(); index++){
-				albumNames.add(vect.get(index).getAlbumName());
+			for(int index=0; index<albumList.size(); index++){
+				albumNames.add(albumList.get(index).getAlbumName());
 			}			
 			return albumNames;
 		}
 		
 		// get the number of albums stored in the album repository
 		public static int getNumOfAlbums(){
-			return vect.size();
+			return albumList.size();
+		}
+		
+		// remove the article from a specific album
+		public static boolean removeArticle(String albumName, String articleName){
+			for(int albumIndex=0; albumIndex<albumList.size(); albumIndex++){
+				if(albumName.equals(albumList.get(albumIndex).getAlbumName())){
+					for(int articleIndex=0; articleIndex<albumList.get(albumIndex).getNumOfArticles(); articleIndex++){
+						if(articleName.equals(albumList.get(albumIndex).getArticleTitle(articleIndex))){
+							albumList.get(albumIndex).removeArticle(articleIndex);
+							return true;
+						}							
+					}
+				}
+			}
+			return false;
 		}
 		
 		// remove the album and its stored articles
 		public static void removeAlbum(String albumName){
-			for(int index=0; index<vect.size(); index++){
-				if(albumName.equals(vect.get(index).getAlbumName())){
-					vect.remove(index);
+			for(int index=0; index<albumList.size(); index++){
+				if(albumName.equals(albumList.get(index).getAlbumName())){
+					albumList.remove(index);
 					return;
 				}
 			}			
@@ -143,15 +158,15 @@ public class AlbumRepository{
 							
 		// check if a specific album name already exists in the album repository
 		public static boolean DuplicateAlbumName(String albumName){
-			for(int index=0; index<vect.size(); index++){
-				if(albumName.equals(vect.get(index).getAlbumName())) return true;
+			for(int index=0; index<albumList.size(); index++){
+				if(albumName.equals(albumList.get(index).getAlbumName())) return true;
 			}	
 			return false;
 		}
 	
 		//save all the albums into the directory(disk)
 		public static void writeAlbumsIntoDisk(String directory){
-			SerializableManager.saveDataToDisk(vect , directory);
+			SerializableManager.saveDataToDisk(albumList , directory);
 		}
 		
 	}

@@ -4,7 +4,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * The UrlToHtml class 
+ * The UrlToHtml class creates an HTML string from an URL link
  *  
  * @version 2.0 (11/19/2008)
  * @author NewsOnAGo team

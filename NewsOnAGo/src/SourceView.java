@@ -58,27 +58,22 @@ public class SourceView {
 		final Group group1 = new Group(tabComposite, SWT.SHADOW_ETCHED_IN);
 		group1.setBounds(0, 10, 290, 100);
 	    group1.setText("Table Operation");
-		
-	    // create a "remove" button to remove the news source
-        final Button removeSource = new Button(group1, SWT.PUSH);
-        removeSource.setBounds(40, 20, 100, 45);
-        removeSource.setText("Remove Source");
         	    
 	    // create a "Get Headlines" button to get headline
 	    final Button getheadlines = new Button(group1, SWT.PUSH);
-	    getheadlines.setBounds(140, 20, 100, 45);
+	    getheadlines.setBounds(85, 22, 100, 45);
 	    getheadlines.setText("Get Headlines");
 	    
 	    // create a label to show error message
 	    errorMessage1 = new Label(group1, SWT.NONE);
 	    errorMessage1.setText("Please check a news source.");
-	    errorMessage1.setBounds(40, 75, 100, 20);
+	    errorMessage1.setBounds(35, 75, 100, 20);
 	    errorMessage1.pack();
 	    		
 		// create a group to group some swt widgets
 		final Group group2 = new Group(tabComposite, SWT.SHADOW_ETCHED_IN);
 		group2.setBounds(0, 120, 290, 190);
-	    group2.setText("Add Source");
+	    group2.setText("Add and Remove News Source");
 	    
 	    // create a label
 	    final Label label1 = new Label(group2, SWT.NONE);
@@ -107,18 +102,23 @@ public class SourceView {
 	    // create a "Add" button to add a news source
 	    final Button addSource = new Button(group2, SWT.PUSH);
 	    addSource.setText("Add");
-	    addSource.setBounds(190, 120, 80, 30);
+	    addSource.setBounds(110, 120, 80, 30);
+	    
+	    // create a "remove" button to remove the news source
+        final Button removeSource = new Button(group2, SWT.PUSH);
+        removeSource.setBounds(190, 120, 80, 30);
+        removeSource.setText("Remove");
 	    
 	    // create a label to show error message
 	    errorMessage2 = new Label(group2, SWT.NONE);
-		errorMessage2.setText("Both fields are required.");
-		errorMessage2.setBounds(40, 160, 200, 20);
+		errorMessage2.setText("Both fields are required for adding source.");
+		errorMessage2.setBounds(35, 160, 200, 20);
 		errorMessage2.pack();
 	               
 		// create a table for displaying all the news sources
 		table = new Table(tabComposite, SWT.CHECK | SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL);
 		table.setHeaderVisible(true);
-		table.setBounds(295, 10, 670, 700);
+		table.setBounds(295, 10, 670, 600);
 		
 		// create columns of the table header ("Title", "Link") for user to click on
         for (int loopIndex = 0; loopIndex < titles.length; loopIndex++) {
@@ -143,17 +143,14 @@ public class SourceView {
 		// if "Add" button is pressed
 		Listener addSourceListener = new Listener(){
 			public void handleEvent(Event event){
-				try{	
+				try{
 					// add a news source specified by the user
 					addSource();
 				}
-				
 				catch(Exception e){
-					
 					// if something wrong, show error message in the console
 			        e.printStackTrace();
 				}   
-				
 				finally{
 					
 				}
@@ -164,16 +161,17 @@ public class SourceView {
 		
 		// if "Remove Source" button is pressed
 		Listener removeSourceListener = new Listener(){
-			public void handleEvent(Event event){	
+			public void handleEvent(Event event){
 				try{
 					// remove the news sources checked in the source table
 					removeSource();
-				}				
+				}
 				catch(Exception e){
 					// if something wrong, show error message in the console
 			        e.printStackTrace();
 				}   
-				finally{				
+				finally{
+					
 				}
 			}
 		};
@@ -234,9 +232,7 @@ public class SourceView {
 				Color red = new Color(null, 255 , 0 , 0);
 				errorMessage2.setForeground(red);
 			}	
-			
 			else{
-				
 				// if added news source does not exist in the news source repository
 				if(!NewsSourceRepository.checkNewsSourceRepo(sourceLink)){
 					
@@ -263,7 +259,6 @@ public class SourceView {
 				
 				// if added news source already exists in the news source repository
 				else{					
-					
 				    // show error message
 					errorMessage2.setText("News source already exists.");
 					errorMessage2.pack();							
@@ -314,12 +309,11 @@ public class SourceView {
         if(checkedNum == 0){
         	
 	        //show error message
-            errorMessage1.setText("Please check a news source.");
-			errorMessage1.pack();							
+            errorMessage2.setText("Please check a news source to remove.");
+			errorMessage2.pack();							
 			Color red = new Color(null, 255 , 0 , 0);
-			errorMessage1.setForeground(red);
+			errorMessage2.setForeground(red);
 	  	}
-        
         else{
         	// if at least one news source is checked
         	// convert vector into array for removing checked news sources 
@@ -332,10 +326,10 @@ public class SourceView {
 	  		table.remove(checkedSources);
 	  		
 	  		// show the message
-	        errorMessage1.setText(checkedNum+" news sources are removed from the table.");
-			errorMessage1.pack();							
+	        errorMessage2.setText(checkedNum+" news sources are removed.");
+			errorMessage2.pack();							
 			Color black = new Color(null, 0 , 0 , 0);
-			errorMessage1.setForeground(black);
+			errorMessage2.setForeground(black);
         }
 	}
 	
@@ -390,7 +384,7 @@ public class SourceView {
 		}
 	  	
 	  	// if no news sources are checked in the table
-	  	if(checkedNum==0){
+	  	if(checkedNum == 0){
 	  		
         	//show error message
             errorMessage1.setText("Please check a news source.");
@@ -411,12 +405,11 @@ public class SourceView {
 				Color black = new Color(null, 0 , 0 , 0);
 				errorMessage1.setForeground(black); 
 		  	}
-	  		
 		  	else{
 		  		// if no table updating actions happen in HeadlineView 
 		  		// (no headlines are added in the headline table)
 		  		// show the message
-		  		errorMessage1.setText("All headlines had been received before.");
+		  		errorMessage1.setText("All headlines had been received.");
 				errorMessage1.pack();							
 				Color black = new Color(null, 0 , 0 , 0);
 				errorMessage1.setForeground(black); 

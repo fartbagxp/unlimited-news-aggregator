@@ -24,31 +24,10 @@ public class StartLoader {
 	// program starts running from here
     public static void main(String[] args) {
     	
-    	// create a new news source repository 
-    	// read all the stored news sources from the file "newssourcelist.ser" 
-    	// put them into created news source repository
-    	new NewsSourceRepository(".\\newssourcelist.ser");
-    	
-    	// create a new article repository 
-    	// read all the stored articles from the file "articlelist.ser" 
-    	// put them into created article repository
-    	new ArticleRepository(".\\articlelist.ser");
-    	 	
-    	// create a new album repository 
-    	// read all the stored albums from the file "albumlist.ser" 
-    	// put them into created album repository
-    	new AlbumRepository(".\\albumlist.ser");
-    	
+    	// create a splash screen
+    	SplashScreen.createSplash();
+		
     	// start up NewsOnAGo
-        new StartLoader();
-        
-        // write all the news sources into the file "newssourcelist.ser" stored in the computer disk 
-        NewsSourceRepository.writeNewsSourcesIntoDisk(".\\newssourcelist.ser");
-        
-        // write all the articles into the file "articlelist.ser" stored in the computer disk 
-        ArticleRepository.writeArticlesIntoDisk(".\\articlelist.ser");
-        
-        // write all the albums into the file "albumlist.ser" stored in the computer disk 
-        AlbumRepository.writeAlbumsIntoDisk(".\\albumlist.ser");
-   }
+		new StartLoader();
+    }
 }
