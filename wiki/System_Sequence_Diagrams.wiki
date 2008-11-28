@@ -1,0 +1,1 @@
+These systems sequence diagrams runs through a scenario of a use case of the news aggregator and how it should work
