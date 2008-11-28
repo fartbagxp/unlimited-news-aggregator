@@ -42,7 +42,7 @@ We have no experience in creating GUI in C++.We need a GUI to allow interaction 
 
 Aggregator	An application that downloads headlines and articles to the computer.
 Headline	A heading at the top of a news article indicating the nature of the article.
-RSS	A format used to update Web feeds.  It stands for really simple syndication.
+RSS	        A format used to update Web feeds.  It stands for really simple syndication.
 Web feed	Data format that provide the news headlines/content directly to the aggregator.
 Categories	Classification of articles including tags, title, date, etc…
 Album	A type of scrape-book in the aggregator to put news article in.
@@ -80,6 +80,7 @@ We plan to do our project implementation earlier for fear of encountering diffic
 As of 9/25/08
 
 After the discussion about our project inception, the report writing each member is responsible for is listed below:
+
 •	Hsin-Yen Liu (Tommy): Project Status Report, Contribution Summary, Layout of Inception.
 
 •	Yu Ning (Boris): Vision Statement, Glossary, Project Budget.
