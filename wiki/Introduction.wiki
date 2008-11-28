@@ -41,10 +41,16 @@ We have no experience in creating GUI in C++.We need a GUI to allow interaction 
 * 2. Glossary *
 
 Aggregator	An application that downloads headlines and articles to the computer.
-Headline	A heading at the top of a news article indicating the nature of the article.
+
+Headline	A heading at the top of a news article indicating the nature of the 
+article.
+
 RSS	        A format used to update Web feeds.  It stands for really simple syndication.
+
 Web feed	Data format that provide the news headlines/content directly to the aggregator.
+
 Categories	Classification of articles including tags, title, date, etc…
+
 Album	A type of scrape-book in the aggregator to put news article in.
 
 * 3. Project Budget *
