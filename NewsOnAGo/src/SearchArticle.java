@@ -26,12 +26,6 @@ public class SearchArticle {
 		TableItem[] headlines = table.getItems();
 		int headlinesNum = headlines.length;
 	 	
-	    // update all headlines before proceeding
-	 	for( int j = 0; j < NewsSourceRepository.getNumOfSources(); j++){
-		   NewsSource src = NewsSourceRepository.getSourceByIndex(j);
-           RSSFeed.iterateRSSFeed(src.getTitle(), src.getLink());
- 	    }
-	 	
 	 	String TextToString = searchText.getText();
 	 	TextToString = TextToString.toLowerCase();
 	 	
@@ -157,9 +151,6 @@ public class SearchArticle {
 			
 			// headline text currently in the table
 			String tableHeadline = headline.getText(0);
-			
-			//System.out.println("This is inside searchResult " + headlineText);
-			//System.out.println("This is in the table = " + tableHeadline);
 			
 			// if the two headlines equal, we don't have to delete it
 			if (headlineText.equalsIgnoreCase(tableHeadline)){

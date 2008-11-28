@@ -360,7 +360,7 @@ public class SourceView {
 	  		
 	  		// check if each checkbox is checked
 	  		isChecked = table.getItem(index).getChecked();
-		  		
+	  		
 	  		// if a news source has been checked, get the headline from this news source
 	  		if(isChecked){
 	  			

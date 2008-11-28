@@ -42,12 +42,12 @@ public class GUI
     // make beautiful menu for user to use, lalalala!
     public static void menuMaking(){
     	
-        //create a "Get Headlines" button to get headline!
-        shell.open();
+       //create a "Get Headlines" button to get headline!
+       shell.open();
 
-        shell.setSize(1000, 700);
+       shell.setSize(1000, 700);
 
-        shell.setText("NewsOnAGo");
+       shell.setText("NewsOnAGo");
 
        Menu menu = new Menu(shell, SWT.BAR);
        

@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Main-Class: net.sourceforge.newsonago.StartLoader
+Class-Path: lib/swt.jar
+Class-Path: lib/jdom.jar
+Class-Path: lib/rome-1.0RC1.jar

@@ -59,7 +59,6 @@ public class RSSFeed {
 		        String descriptionString = String.valueOf(entry.getDescription());
 		        int infoEnd = descriptionString.indexOf("<");
 		        
-		        
 		        descriptionString = descriptionString.substring(22, infoEnd); 
 		        
 		        // model.addRow(data);
@@ -68,9 +67,6 @@ public class RSSFeed {
 		            display += "\ncontent value:"+imp.getValue();
 		        }
 		        display += "\n";
-		        
-		        // Coding test: tracing statement
-//		        System.out.println(display);
 		                
 		        /* data holds all the data we need to get headlines and other various attributes
 		         * parameter:	item 0 = title

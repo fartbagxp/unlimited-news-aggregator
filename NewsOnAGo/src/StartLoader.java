@@ -29,5 +29,21 @@ public class StartLoader {
 		
     	// start up NewsOnAGo
 		new StartLoader();
+		
+		// write the data before the user closes the application
+		writeData();
+    }
+    
+    // write news sources, articles, and albums into 
+    public static void writeData(){
+    	
+	    // write all the news sources into the file "newssourcelist.ser" stored in the computer disk 
+		NewsSourceRepository.writeNewsSourcesIntoDisk(".\\newssourcelist.ser");
+		          
+		// write all the articles into the file "articlelist.ser" stored in the computer disk 
+		ArticleRepository.writeArticlesIntoDisk(".\\articlelist.ser");
+		          
+	    // write all the albums into the file "albumlist.ser" stored in the computer disk 
+		AlbumRepository.writeAlbumsIntoDisk(".\\albumlist.ser");
     }
 }

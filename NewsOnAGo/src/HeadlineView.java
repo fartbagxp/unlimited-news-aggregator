@@ -144,18 +144,21 @@ public class HeadlineView {
 	    		
 	    		// if the user does type in a search string
 	    		if (!searchText.getText().equals("")){
-	    			
+	    	
 	    			// search by that search string
 	    			SearchArticle.search(table, searchText);			
 	    		}
 	    		
 	    		// if the user does not type in any search strings
-	    		else {	    			
+	    		// all headlines that the user searched should appear
+	    		else {	    	
+	    			
+	    			SourceView.getHeadlines();
 	    			// show error message
-	    			errorMessage2.setText("Please enter a search string:");							
+	    	/*		errorMessage2.setText("Please enter a search string:");							
 	    			Color red = new Color(null, 255 , 0 , 0);
 	    			errorMessage2.setForeground(red); 
-	    			errorMessage2.pack();
+	    			errorMessage2.pack(); */
 	    		}
 	    	}
 	    });
