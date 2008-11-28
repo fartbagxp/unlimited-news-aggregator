@@ -7,24 +7,24 @@ Software Project - NewsOnAGo, a news aggregator
 = Details =
 * 1. Vision Statement *
 
-Elevator Summary of the Project
+_Elevator Summary of the Project_
 
 The Asian Unlimited is committed to building a news aggregator, a news article download application.  Our team consists of three members, Yu Ning (Boris), Max Muthalathu, and Hsin-Yen Liu (Tommy).  We will be building an application capable of downloading articles from popular online news websites such as cnn.com, newyorktimes.com, and foxnews.com. Upon downloading the article, the users will be able to search, save articles, and create albums. It will also be possible for the user to comment on the news article in the album for later usage.  The application will have an ability to make the article into a pdf or ebook format.  This will allow the user to get an article online and read it offline.  This will be our major requirement.   Our target audience will be people who are stuck in airports, train stations, and other inconvenient places.  
 
-A Business Case for the Project
+_A Business Case for the Project_
 
 Short Analysis of the Competition:
 Our major competitors are Google Reader, NewsGator Online, Rojo.com and Bloglines. We will be a stand-alone application while the majority of our competition is web based.  While Google Reader is one of the few applications available that saves articles for offline viewing, none of them saves articles into PDF and ebook formats.
 
-Market Space:
+_Market Space_
 
 Our product will be targeting individuals who will not be connected to the internet and wish to read the news. The software will be especially useful for people who have to travel and have pdas, smart phones, or other mobile electronics capable of reading PDFs or ebook formats.
 
-A Description of the Project Stakeholders
+_Description of the Project Stakeholders_
 
 The stakeholders of our project include our team, professors, and TAs. Our team consists of Max Muthalathu, Hsin-Yen Liu, Yu Ning. We are stakeholders of this project because as future users we will be depending on this program to get the news. Professors and TAs are also stakeholders in our project because they’re the ones putting their names on the line for us.
 
-A List of the Major Features of the Completed Project
+_A List of the Major Features of the Completed Project_
 
 1.	Stand-alone client software
 2.	Collecting and downloading the news from the selected (subscribed) website
@@ -32,26 +32,27 @@ A List of the Major Features of the Completed Project
 4.	Search for desired articles
 5.	Saves articles to pdf and ebook format (Ability to read offline)
 
-A List of the Major Risks of the Project
+_A List of the Major Risks of the Project_
 
 Our first risk is unfamiliarity with RSS feeds. Without this our software will not be able to perform the most basic need of an aggregator.
 We also have unfamiliarity with ebook and pdf formats. This is our selling point. Without this our product would not be unique and users would not have a preference toward our product.
+
 We have no experience in creating GUI in C++.We need a GUI to allow interaction with the user. Having no experience is a risk since we are not sure if we can learn how to make one in C++. Learning another language to implement a GUI would impose another risk of having to learn that language and understand how to complete the rest of the project in that language.
 
 * 2. Glossary *
 
-Aggregator	An application that downloads headlines and articles to the computer.
+Aggregator -    An application that downloads headlines and articles to the computer.
 
-Headline	A heading at the top of a news article indicating the nature of the 
+Headline -	A heading at the top of a news article indicating the nature of the 
 article.
 
-RSS	        A format used to update Web feeds.  It stands for really simple syndication.
+RSS - 	        A format used to update Web feeds.  It stands for really simple syndication.
 
-Web feed	Data format that provide the news headlines/content directly to the aggregator.
+Web feed -	Data format that provide the news headlines/content directly to the aggregator.
 
-Categories	Classification of articles including tags, title, date, etc…
+Categories -	Classification of articles including tags, title, date, etc…
 
-Album	A type of scrape-book in the aggregator to put news article in.
+Album - 	A type of scrape-book in the aggregator to put news article in.
 
 * 3. Project Budget *
 
