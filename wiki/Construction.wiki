@@ -4,7 +4,9 @@
 
 =Contributions=
 
-_Yu Ning (Boris)_: 1) Took part in creating diagram documents, 
+_Yu Ning (Boris)_: 
+
+                 1) Took part in creating diagram documents, 
 
                  2) Completed majority of the testing documents
 
@@ -16,7 +18,9 @@ _Yu Ning (Boris)_: 1) Took part in creating diagram documents,
 
 	- Sorting column functions
 
-_Max Muthalathu_: 1) Took part in creating diagram documents, 
+_Max Muthalathu_: 
+
+                1) Took part in creating diagram documents, 
 
                 2) Took part in creating the testing documents
 
@@ -28,7 +32,9 @@ _Max Muthalathu_: 1) Took part in creating diagram documents,
 
 	- Major graphical user interface building
 
-_Hsin-Yen Liu_ (Tommy): 1) Completed majority of all diagram documents, 
+_Hsin-Yen Liu_ (Tommy): 
+
+                      1) Completed majority of all diagram documents, 
 
 	              2) Took part in reviewing the testing documents
 
