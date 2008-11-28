@@ -2,9 +2,11 @@
 
 *Goal requirement*
   
+
 Each test case will undergo whether it works under normal conditions (if the test is testable within the system) and whether it meets user requirement (for interface design).
 
-Schedule: 
+_Schedule_
+
 Dates	System testing schedule
 11/19/08	-	- Organize time to talk to different testers (explanation of system)
 -	Deal with test case 1-6
