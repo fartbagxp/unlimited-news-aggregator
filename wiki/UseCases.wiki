@@ -117,5 +117,20 @@ Postconditions:	       1.   The system stores the articles in the album.
 -----------------------------------------------------------------------------------------
 * Use Case 6: CommentArticle *
 
+Identifier:	UC6
 
+Description:	The CommentArticle use case models a User writing comments about an article.
 
+Actors:	User
+
+Preconditions:	1.	The User is viewing an article in an album.
+
+Flow of events:	1.	The use case starts when the User selects the comment option.
+
+2.	The system provides a text editor to make comments.
+
+3.	The User selects the save option.
+
+Postconditions:	       1.   The system saves the comments for the article.
+
+-----------------------------------------------------------------------------------------
