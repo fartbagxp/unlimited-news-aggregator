@@ -49,4 +49,6 @@ _Hsin-Yen Liu_ (Tommy):
 All documents are reviewed by every member.
 
 
+The test cases are included in the following document.
+
 http://unlimited-news-aggregator.googlecode.com/svn/NewsOnAGo/Construction_Report_vFinal.pdf
