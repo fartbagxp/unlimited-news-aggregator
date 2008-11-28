@@ -1,0 +1,18 @@
+
+= Elaboration =
+
+= Details =
+
+Project Status Report
+Currently we have finished our second iteration. We have restructured our schedule to issues that had come up. There were two main issues that we had to deal with. We had decided since inception to use Eclipse with Java instead of C++ which was our original plan. None of us were masters in Java or Eclipse so we had an initial setback while trying to convert the code we already had in C++. We had hoped to be able to parse the HTML and obtain the article by itself, without ads or menus but it seemed impossible. Since this was an aesthetic problem and would not affect the functionality of the program we gave up on parsing the article. We are now starting on our third iteration to complete our third used case to save the articles into pdf and ebook format. Since this is our major requirement in this project, we’ll be working the hardest during this point.      
+
+Contribution Summary
+After the discussion about our project elaboration, the report writing each member is responsible for is listed below:
+
+•	Hsin-Yen Liu (Tommy): Domain Model Diagram, Deployment Diagram, Project Status
+
+•	Yu Ning (Boris): Supplemental Specificiation, Deployment Diagram, Project Status
+
+•	Max Muthalathu: Supplemental Specificiation, Used Cases, Deployment Diagram, Project Schedule, Project Status
+
+All content is reviewed by every member.
