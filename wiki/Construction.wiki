@@ -47,3 +47,6 @@ _Hsin-Yen Liu_ (Tommy):
 		        - Storing comments in an article functions
 
 All documents are reviewed by every member.
+
+
+http://unlimited-news-aggregator.googlecode.com/svn/NewsOnAGo/Construction_Report_vFinal.pdf
