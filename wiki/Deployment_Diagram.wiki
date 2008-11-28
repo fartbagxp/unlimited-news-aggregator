@@ -1,1 +1,1 @@
-Deployment Diagram.JPG
+http://unlimited-news-aggregator.googlecode.com/svn/NewsOnAGo/Deployment_Diagram.JPG
