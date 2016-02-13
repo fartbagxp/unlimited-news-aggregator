@@ -1,0 +1,3 @@
+A deployment diagram shows how hardware deals with our news aggregator.
+
+http://unlimited-news-aggregator.googlecode.com/svn/NewsOnAGo/Deployment_Diagram.JPG

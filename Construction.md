@@ -1,0 +1,54 @@
+# Project Status #
+
+> Currently, we have completed iteration 5 – the final iteration that we had planned for to include a commenting system.  This came as a surprise to us since we can now go back to use case 3 (saving articles into PDFs) that we did not complete in iteration 3.  NewsOnAGo news aggregator currently has more than 80% (5/6) of its use cases completed.  We will be preparing for the final transition presentation, as well as all the deliverables for it over the next two weeks.
+
+# Contributions #
+
+_Yu Ning (Boris)_:
+
+  1. Took part in creating diagram documents,
+
+> 2) Completed majority of the testing documents
+
+> 3) Coding:
+
+> - Error checking
+
+> - Search article function
+
+> - Sorting column functions
+
+_Max Muthalathu_:
+
+  1. Took part in creating diagram documents,
+
+> 2) Took part in creating the testing documents
+
+> 3) Coding
+
+> - Error checking
+
+> - Created Mozilla browser for article view
+
+> - Major graphical user interface building
+
+_Hsin-Yen Liu_ (Tommy):
+
+  1. Completed majority of all diagram documents,
+
+> 2) Took part in reviewing the testing documents
+
+> 3) Coding:
+
+> - News source saving / deleting functions
+
+> - Album creating and storing article into album functions
+
+> - Storing comments in an article functions
+
+All documents are reviewed by every member.
+
+
+The test cases are included in the following document.
+
+http://unlimited-news-aggregator.googlecode.com/svn/NewsOnAGo/Construction_Report_vFinal.pdf
